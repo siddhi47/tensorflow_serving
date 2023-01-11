@@ -13,9 +13,9 @@ docker pull tensorflow/serving
 Download pretrained models and save it inside model folder
 
 ```
-wget -q -P model/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/saved_model.pb
-wget -q -P model/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables.data-00000-of-00001
-wget -q -P model/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables.index
+wget -q -P models/animal_classifier/1/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/saved_model.pb
+wget -q -P models/animal_classifier/1/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables.data-00000-of-00001
+wget -q -P models/animal_classifier/1/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables.index
 ```
 
 ## Install the requirements
