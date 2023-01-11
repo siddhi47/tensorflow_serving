@@ -1,0 +1,36 @@
+import os
+import zipfile
+import subprocess
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+import tempfile
+
+
+def save_model():
+    model = tf.keras.models.load_model("model")
+
+    MODEL_DIR = tempfile.gettempdir()
+    version = 1
+    export_path = os.path.join(MODEL_DIR, str(version))
+    print(f"export_path = {export_path}\n")
+
+    # Save the model
+    tf.keras.models.save_model(
+        model,
+        export_path,
+        overwrite=True,
+        include_optimizer=True,
+        save_format=None,
+        signatures=None,
+        options=None,
+    )
+
+
+def main():
+    os.environ["MODEL_DIR"] = tempfile.gettempdir()
+    save_model()
+
+
+if "__main__" == __name__:
+    main()
