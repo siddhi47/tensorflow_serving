@@ -4,7 +4,9 @@ import cv2
 import requests
 import os
 import sys
+import dotenv
 
+dotenv.load_dotenv()
 
 def read_image(image_path):
     image = cv2.imread(image_path)
@@ -26,11 +28,12 @@ def predict(image):
 
     # Capture the response by making a request to the appropiate URL with the appropiate parameters
     json_response = requests.post(
-        "http://localhost:8501/v1/models/animal_classifier:predict",
+        os.getenv("TENSORFLOW_SERVE_ENDPOINT", "http://localhost:8501/v1/models/my_model:predict"),
         data=data,
         headers=headers,
     )
-
+    if json_response.status_code != 200:
+        raise Exception("Request failed with status code: {}".format(json_response))
     # Parse the predictions out of the response
     predictions = json.loads(json_response.text)["predictions"]
     return np.argmax(predictions, axis=1)[0]
