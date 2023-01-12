@@ -8,6 +8,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
+
 def read_image(image_path):
     image = cv2.imread(image_path)
     return image
@@ -28,7 +29,10 @@ def predict(image):
 
     # Capture the response by making a request to the appropiate URL with the appropiate parameters
     json_response = requests.post(
-        os.getenv("TENSORFLOW_SERVE_ENDPOINT", "http://localhost:8501/v1/models/my_model:predict"),
+        os.getenv(
+            "TENSORFLOW_SERVE_ENDPOINT",
+            "http://localhost:8501/v1/models/my_model:predict",
+        ),
         data=data,
         headers=headers,
     )
