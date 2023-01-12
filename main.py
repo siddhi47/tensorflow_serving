@@ -53,8 +53,7 @@ def main():
     try:
         file_name = sys.argv[1]
     except:
-        print("cannot proceed")
-        exit()
+        raise Exception("Please provide an image file name")
     image = read_image(file_name)
     prediction = predict(image)
     print("The predicted class is: {}".format(get_class(prediction)))
