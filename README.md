@@ -5,8 +5,8 @@ This repository takes inspiration from the coursera's MLOps course Deploying Mac
 
 ## Pull the docker image
 
-The tensorflow maintains the docker repository for tensorflow-serve. It is a well maintained repository with 50 million plus pulls (at the time of the creation of this repository)
-
+The tensorflow maintains the docker repository for tensorflow-serve. It is a well maintained repository with 50 million plus pulls (at the time of the creation of this repository).
+Simply pull the repository using the following command.
 
 ```
 docker pull tensorflow/serving
@@ -76,3 +76,9 @@ Making predictions from local file
 ```
 curl -X POST http://127.0.0.1:5000/predict_local_image -F image=@data/test_dog.jpg
 ```
+
+## Prerequisites
+
+- Familiar with python.
+- Familiar with Docker.
+- Familiar with REST APIs.
