@@ -5,6 +5,9 @@ This repository takes inspiration from the coursera's MLOps course Deploying Mac
 
 ## Pull the docker image
 
+The tensorflow maintains the docker repository for tensorflow-serve. It is a well maintained repository with 50 million plus pulls (at the time of the creation of this repository)
+
+
 ```
 docker pull tensorflow/serving
 ```
