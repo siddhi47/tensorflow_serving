@@ -53,7 +53,7 @@ python main.py data/test_dog.jpg
 
 ## Using the Flask API
 
-Run the flask API
+I have created a wrapper around the main function so that it can be accessed through the Flask API. To make the serving available through flask, first run the flask api.
 
 ```
 flask run
