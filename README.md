@@ -62,9 +62,14 @@ flask run
 Test out the APIs in your terminal using curl command
 
 Making prediction from the url (Make sure the URL redirects to an image)
-` curl -X POST http://127.0.0.1:5000/predict_url_image  -d "image_url=https://static01.nyt.com/images/2021/04/27/science/21SCI-DISHONESTBIRDS1/21SCI-DISHONESTBIRDS1-mediumSquareAt3X.jpg"`
+
+``` 
+curl -X POST http://127.0.0.1:5000/predict_url_image  -d "image_url=https://static01.nyt.com/images/2021/04/27/science/21SCI-DISHONESTBIRDS1/21SCI-DISHONESTBIRDS1-mediumSquareAt3X.jpg"
+```
 
 
 Making predictions from local file
 
-`curl -X POST http://127.0.0.1:5000/predict_local_image -F image=@data/test_dog.jpg`
+```
+curl -X POST http://127.0.0.1:5000/predict_local_image -F image=@data/test_dog.jpg
+```

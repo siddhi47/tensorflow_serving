@@ -31,7 +31,7 @@ def predict(image):
     json_response = requests.post(
         os.getenv(
             "TENSORFLOW_SERVE_ENDPOINT",
-            "http://localhost:8501/v1/models/my_model:predict",
+            "http://localhost:8501/v1/models/my_model:predict", # default tensorflow serve endpoint
         ),
         data=data,
         headers=headers,
@@ -44,6 +44,11 @@ def predict(image):
 
 
 def get_class(index):
+    """
+    Get class name from index
+    
+    Note: limited to 3 classes only for test
+    """
     if index == 0:
         return "bird"
     elif index == 1:
