@@ -1,2 +1,5 @@
 models
 .env
+tmp
+# ingore __pycache__
+__pycache__
